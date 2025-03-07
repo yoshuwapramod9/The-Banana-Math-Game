@@ -7,12 +7,12 @@ let isMusicOn = true; // Music is ON by default
 let isSoundOn = true; // Sound effects are ON by default
 
 // Background Music
-const backgroundMusic = new Audio("background-music.mp3"); // Replace with your music file
+const backgroundMusic = new Audio("media\background-music.mp3"); // Replace with your music file
 backgroundMusic.loop = true; // Make it loop continuously
 
 // Sound Effects
-const correctSound = new Audio("correct.mp3"); // Sound for correct answer
-const wrongSound = new Audio("wrong.mp3"); // Sound for wrong answer
+const correctSound = new Audio("media\correct.mp3"); // Sound for correct answer
+const wrongSound = new Audio("media\wrong.mp3"); // Sound for wrong answer
 
 // Fetch question from Banana API
 function fetchQuestion() {
