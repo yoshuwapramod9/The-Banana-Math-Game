@@ -20,6 +20,7 @@ body {
     font-size: 28px;
     font-weight: bold;
     color: #ffb703;
+    margin-bottom: 20px;
 }
 
 /* Game Info */
@@ -29,12 +30,14 @@ body {
     padding: 8px;
     border-radius: 10px;
     color: white;
+    margin-bottom:0;
 }
 
 /* Question Box */
 .question-box {
     background: #fefae0;
     border-radius: 10px;
+    margin-top: 0;
 }
 
 /* Answer Input */
