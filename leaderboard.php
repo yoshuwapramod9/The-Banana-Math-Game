@@ -6,7 +6,7 @@ if ($conn->connect_error) {
 }
 
 // Fetch top scores (sorted)
-$sql = "SELECT username, score FROM scores ORDER BY score DESC LIMIT 10";
+$sql = "SELECT username, score FROM scores ORDER BY score DESC LIMIT 5";
 $result = $conn->query($sql);
 
 $scores = [];
