@@ -31,37 +31,51 @@ function fetchQuestion() {
 
 // Start the game timer
 function startTimer() {
+    clearInterval(timerInterval); //Clear any existing timer
+    
     timerInterval = setInterval(() => {
         if (timeLeft > 0) {
             timeLeft--;
             document.getElementById("timer").innerText = timeLeft;
         } else {
             clearInterval(timerInterval);
-            alert("Time's up! Game Over.");
-            saveScore();
+            endGame(); //Call endGame() when timer reach 0
         }
     }, 1000);
 }
 
+//End the game when time runs out
+function endGame() {
+    alert("⏳ Time's up! Game Over.");
+    document.getElementById("answer").disabled = true;
+    document.getElementById("submitButton").disabled = true;
+    saveScore(); // Save final score
+
+}
 // Submit answer
 function submitAnswer() {
+    if (timeLeft <= 0) return;
+
     let userAnswer = document.getElementById("answer").value.trim().toLowerCase();
+    let messageBox = document.getElementById("messageBox");
+    let message = document.getElementById("message");
 
     if (userAnswer === currentAnswer) {
         score += 10;
-        timeLeft += 20; // Increase time
-        document.getElementById("message").innerText = "✅ Correct answer!";
-        document.getElementById("message").style.color = "green";
+        timeLeft += 10; // Increase time
+        message.innerText = "✅ Correct answer!";
+        messageBox.className = "message-box correct";//Apply green styling
         level++;
         document.getElementById("level").innerText = level;
         if (isSoundOn) correctSound.play(); // Play correct sound if enabled
     } else {
-        timeLeft -= 15; // Reduce time
-        document.getElementById("message").innerText = "❌ Wrong answer, try again!";
-        document.getElementById("message").style.color = "red";
+        timeLeft -= 5; // Reduce time
+        message.innerText = "❌ Wrong answer, try again!";
+        messageBox.className = "message-box wrong"; //Applying re styling
         if (isSoundOn) wrongSound.play(); // Play wrong sound if enabled
     }
 
+    messageBox.style.display = "block"; //show the message box
     document.getElementById("score").innerText = score;
     document.getElementById("timer").innerText = timeLeft;
     document.getElementById("answer").value = "";
@@ -88,17 +102,7 @@ function toggleSound() {
 
 // Restart game
 function restartGame() {
-    clearInterval(timerInterval);
-    level = 1;
-    score = 0;
-    timeLeft = 60;
-    document.getElementById("level").innerText = level;
-    document.getElementById("score").innerText = score;
-    document.getElementById("timer").innerText = timeLeft;
-    document.getElementById("message").innerText = "";
-    document.getElementById("answer").value = "";
-    fetchQuestion();
-    startTimer();
+   window.location.reload(); // Reload the page to restart the game 
 }
 
 // Exit game
