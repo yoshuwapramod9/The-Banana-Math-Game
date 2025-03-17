@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play - The Banana Math Game</title>
+
+    
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css"> 
+    <style>
+        body {
+            text-align: center;
+            background: url('background.png') no-repeat center center/cover; 
+            font-family: 'Play', sans-serif; 
+            background-color: #ffeb99; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .play-box {
+            background: white;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 350px;
+        }
+
+        h1 {
+            color: #ffcc00; 
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .image-box {
+            padding: 10px;
+            border-radius: 10px;
+            margin: 15px auto;
+            width: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+        }
+
+        .image-box img {
+            width: 304px; 
+            height: auto;
+        }
+
+        .play-btn {
+            background-color: #ffcc00; 
+            color: black;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+            margin-top: 15px;
+            font-family: 'Play', sans-serif; 
+        }
+
+        .play-btn:hover {
+            background-color: #ffdb4d;
+        }
+       
+    </style>
+</head>
+<body>
+
+    <div class="play-box">
+        <h1>The Banana Math Game</h1>
+
+        <!-- Image Box -->
+        <div class="image-box">
+            <img src="media/play screen image.png" alt="Banana Game Logo"> 
+        </div>
+
+        <p>Are you ready for the challenge?</p>
+        <button class="play-btn" onclick="startGame()">Play Now</button>
+    </div>
+
+    <script>
+        function startGame() {
+            window.location.href = "game.html"; // Redirects to game page
+        }
+    </script>
+
+</body>
+</html>
