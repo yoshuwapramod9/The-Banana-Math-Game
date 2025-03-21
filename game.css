@@ -1,7 +1,7 @@
 /* Apply Play Font */
 body {
     font-family: 'Play', sans-serif;
-    background: linear-gradient(135deg, #fceabb, #f8b500);
+    background: url('media/game_screen.png') no-repeat center center/cover; 
     color: #333;
     text-align: center;
 }
