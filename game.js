@@ -81,7 +81,11 @@ function submitAnswer() {
     document.getElementById("score").innerText = score;
     document.getElementById("timer").innerText = timeLeft;
     document.getElementById("answer").value = "";
-    fetchQuestion(); // Get new question
+    
+    setTimeout(() => {
+        messageBox.style.display = "none";
+        fetchQuestion();
+    }, 1000);
 }
 
 // Toggle background music ON/OFF
