@@ -2,6 +2,7 @@
 body {
     font-family: 'Play', sans-serif;
     background: url("media/game_screen.jpg") no-repeat center center fixed; 
+    background-size:cover;
     color: #333;
     text-align: center;
 }
