@@ -1,6 +1,6 @@
 body {
     font-family: 'Play', sans-serif;
-    background: linear-gradient(to right, #ffcc00, #ff9900);
+    background: url("media/leaderboard_bg.jpg") no-repeat center center/cover;
     height: 100vh;
     display: flex;
     justify-content: center;
